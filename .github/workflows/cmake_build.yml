@@ -12,8 +12,8 @@ jobs:
       # This action checks-out the repository under $GITHUB_WORKSPACE, so the workflow can access it.
       - name: checkout
         uses: actions/checkout@v2
-      - name: sudo apt install pcscd pcsc-tools
-        run: sudo apt install pcscd pcsc-tools
+      - name: sudo apt install libpcsc
+        run: sudo apt install libpcsc
       - name: mkdir cmake_build
         run: mkdir cmake_build
       - name: cd cmake_build; cmake .. -DVERBOSE_CMAKE=ON -DENABLE_GCC_WARN=ON
