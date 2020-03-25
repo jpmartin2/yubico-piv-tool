@@ -12,10 +12,10 @@ jobs:
       # This action checks-out the repository under $GITHUB_WORKSPACE, so the workflow can access it.
       - name: checkout
         uses: actions/checkout@v2
-      - name: sudo apt install pcscd pcsc-tools
-        run: sudo apt install pcscd pcsc-tools
-      - name: sudo find / -name "*libpcsclite*"
-        run: sudo find / -name "*libpcsclite*"
+      - name: sudo apt install libpcsclite-dev
+        run: sudo apt install libpcsclite-dev
+      #- name: sudo find / -name "*libpcsclite*"
+      #  run: sudo find / -name "*libpcsclite*"
       - name: mkdir cmake_build
         run: mkdir cmake_build
       - name: cd cmake_build; cmake .. -DVERBOSE_CMAKE=ON -DENABLE_GCC_WARN=ON
