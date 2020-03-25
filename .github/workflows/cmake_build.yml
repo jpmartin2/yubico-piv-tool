@@ -12,6 +12,10 @@ jobs:
       # This action checks-out the repository under $GITHUB_WORKSPACE, so the workflow can access it.
       - name: checkout
         uses: actions/checkout@v2
+      - name: pwd
+        run: pwd
+      - name: ls
+        run: ls
       - name: create build directory
         run: mkdir cmake_build; cd cmake_build
       - name: cmake
