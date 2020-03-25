@@ -13,7 +13,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: sudo apt install pcscd pcsc-tools
-        run: sudo apt install pcscd pcsc pcsc-tools
+        run: sudo apt install pcscd pcsc-tools
       - name: mkdir cmake_build
         run: mkdir cmake_build
       - name: cd cmake_build; cmake .. -DVERBOSE_CMAKE=ON -DENABLE_GCC_WARN=ON
