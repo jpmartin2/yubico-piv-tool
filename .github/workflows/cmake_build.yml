@@ -16,10 +16,10 @@ jobs:
         run: sudo apt install pcscd pcsc-tools
       - name: mkdir cmake_build
         run: mkdir cmake_build
-      - name: cd cmake_build
-        run: cd cmake_build
-      - name: cmake
-        run: cmake .. -DVERBOSE_CMAKE=ON -DENABLE_GCC_WARN=ON
+      - name: cd cmake_build; cmake .. -DVERBOSE_CMAKE=ON -DENABLE_GCC_WARN=ON
+        run: |
+          cd cmake_build
+          cmake .. -DVERBOSE_CMAKE=ON -DENABLE_GCC_WARN=ON
       - name: make
         run: make
       - name: make test
