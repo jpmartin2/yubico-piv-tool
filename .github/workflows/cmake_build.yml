@@ -12,8 +12,8 @@ jobs:
       # This action checks-out the repository under $GITHUB_WORKSPACE, so the workflow can access it.
       - name: checkout
         uses: actions/checkout@v2
-      - name: sudo apt install libpcsclite-dev check
-        run: sudo apt install libpcsclite-dev check
+      - name: sudo apt install libpcsclite-dev check gengetopt help2man
+        run: sudo apt install libpcsclite-dev check gengetopt help2man
       #- name: sudo find / -name "*libpcsclite*"
       #  run: sudo find / -name "*libpcsclite*"
       - name: mkdir cmake_build
