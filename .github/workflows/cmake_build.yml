@@ -25,7 +25,7 @@ jobs:
             elif [ "$RUNNER_OS" == "macOS" ]; then
               echo brew install pkg-config pcsc-lite check gengetopt help2man
               brew install pkg-config pcsc-lite check gengetopt help2man
-              export PKG_CONFIG_PATH="/usr/local/Cellar/openssl@1.1/1.1.1d/lib/pkgconfig"
+              export PKG_CONFIG_PATH="/usr/local/Cellar/openssl@1.1/1.1.1d/lib/pkgconfig; /usr/local/opt/pcsc-lite/lib/pkgconfig"
               echo PKG_CONFIG_PATH = $PKG_CONFIG_PATH
               echo pkg-config --list-all
               pkg-config --list-all
@@ -42,8 +42,8 @@ jobs:
       #  run: brew help
       - name: run cmake
         run: |
-          echo export PKG_CONFIG_PATH="/usr/local/Cellar/openssl@1.1/1.1.1d/lib/pkgconfig"
-          export PKG_CONFIG_PATH="/usr/local/Cellar/openssl@1.1/1.1.1d/lib/pkgconfig"
+          echo export PKG_CONFIG_PATH="/usr/local/Cellar/openssl@1.1/1.1.1d/lib/pkgconfig; /usr/local/opt/pcsc-lite/lib/pkgconfig"
+          export PKG_CONFIG_PATH="/usr/local/Cellar/openssl@1.1/1.1.1d/lib/pkgconfig; /usr/local/opt/pcsc-lite/lib/pkgconfig"
           echo mkdir cmake_build
           mkdir cmake_build
           echo cd cmake_build
