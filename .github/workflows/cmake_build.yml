@@ -29,8 +29,8 @@ jobs:
               echo ls /usr/local/opt/pcsc-lite/lib/pkgconfig
               ls /usr/local/opt/pcsc-lite/lib/pkgconfig
 
-              echo ln -s /usr/local/opt/pcsc-lite/lib/pkgconfig/pcsc-lite.pc /usr/local/lib/pkgconfig/pcsc-lite.pc
-              ln -s /usr/local/opt/pcsc-lite/lib/pkgconfig/pcsc-lite.pc /usr/local/lib/pkgconfig/pcsc-lite.pc
+              echo ln -s /usr/local/opt/pcsc-lite/lib/pkgconfig/libpcsclite.pc /usr/local/lib/pkgconfig/libpcsclite.pc
+              ln -s /usr/local/opt/pcsc-lite/lib/pkgconfig/libpcsclite.pc /usr/local/lib/pkgconfig/libpcsclite.pc
 
               echo pkg-config --list-all
               pkg-config --list-all
