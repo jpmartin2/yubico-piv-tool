@@ -42,8 +42,8 @@ jobs:
       #  run: brew help
       - name: run cmake
         run: |
-          echo export PKG_CONFIG_PATH="/usr/local/Cellar/openssl@1.1/1.1.1d/lib/pkgconfig;"
-          export PKG_CONFIG_PATH="/usr/local/Cellar/openssl@1.1/1.1.1d/lib/pkgconfig;"
+          echo export PKG_CONFIG_PATH="/usr/local/opt"
+          export PKG_CONFIG_PATH="/usr/local/opt"
           echo mkdir cmake_build
           mkdir cmake_build
           echo cd cmake_build
