@@ -23,15 +23,11 @@ jobs:
               echo sudo apt install libpcsclite-dev check gengetopt help2man
               sudo apt install libpcsclite-dev check gengetopt help2man
             elif [ "$RUNNER_OS" == "macOS" ]; then
-              echo brew install pkg-config openssl pcsc-lite check gengetopt help2man
-              brew install pkg-config openssl pcsc-lite check gengetopt help2man
+              echo brew install pkg-config pcsc-lite check gengetopt help2man
+              brew install pkg-config pcsc-lite check gengetopt help2man
+              export PKG_CONFIG_PATH="/usr/local/Cellar/openssl@1.1/1.1.1d/lib/pkgconfig"
               echo PKG_CONFIG_PATH = $PKG_CONFIG_PATH
               echo pkg-config --list-all
-              pkg-config --list-all
-              echo sudo find / -name "libcrypto.pc"
-              sudo find / -name "libcrypto.pc"
-              echo sudo find / -name "*libcrypto*"
-              sudo find / -name "*libcrypto*"
             else
               echo "$RUNNER_OS not supported"
               exit 1
