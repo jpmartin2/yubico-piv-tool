@@ -25,8 +25,8 @@ jobs:
               echo sudo apt install libpcsclite-dev check gengetopt help2man
               sudo apt install libpcsclite-dev check gengetopt help2man
             elif [ "$RUNNER_OS" == "macOS" ]; then
-              echo brew install pkg-config libssl pcsc-lite check gengetopt help2man
-              brew install pkg-config libssl pcsc-lite check gengetopt help2man
+              echo brew install pkg-config openssl pcsc-lite check gengetopt help2man
+              brew install pkg-config openssl pcsc-lite check gengetopt help2man
             else
               echo "$RUNNER_OS not supported"
               exit 1
