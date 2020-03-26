@@ -25,8 +25,8 @@ jobs:
               echo sudo apt install libpcsclite-dev check gengetopt help2man
               sudo apt install libpcsclite-dev check gengetopt help2man
             elif [ "$RUNNER_OS" == "macOS" ]; then
-              echo brew help
-              brew help
+              echo brew install pkg-config libpcsclite-dev check gengetopt help2man
+              brew install pkg-config libpcsclite-dev check gengetopt help2man
             else
               echo "$RUNNER_OS not supported"
               exit 1
