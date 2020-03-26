@@ -17,12 +17,25 @@ jobs:
       # This action checks-out the repository under $GITHUB_WORKSPACE, so the workflow can access it.
       - name: checkout
         uses: actions/checkout@v2
-      - name: Linux install libpcsclite-dev check gengetopt help2man
-        if: ${{ matrix.os }} == 'ubuntu-latest'
-        run: sudo apt install libpcsclite-dev check gengetopt help2man
-      - name: Mac homebrew version
-        if: ${{ matrix.os }} == 'macos-latest'
-        run: brew help
+      - name: Install libpcsclite-dev check gengetopt help2man
+        run: |
+            if [ "$RUNNER_OS" == "Linux" ]; then
+              echo sudo apt install libpcsclite-dev check gengetopt help2man
+              sudo apt install libpcsclite-dev check gengetopt help2man
+            elif [ "$RUNNER_OS" == "Windows ]; then
+              echo brew help
+              brew help
+            else
+              echo "$RUNNER_OS not supported"
+              exit 1
+            fi
+        shell: bash
+      #- name: Linux install libpcsclite-dev check gengetopt help2man
+      #  if: ${{ matrix.os }} == 'ubuntu-latest'
+      #  run: sudo apt install libpcsclite-dev check gengetopt help2man
+      #- name: Mac homebrew version
+      #  if: ${{ matrix.os }} == 'macos-latest'
+      #  run: brew help
       - name: run cmake
         run: |
           echo mkdir cmake_build
