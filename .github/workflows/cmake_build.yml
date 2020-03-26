@@ -17,6 +17,8 @@ jobs:
       # This action checks-out the repository under $GITHUB_WORKSPACE, so the workflow can access it.
       - name: checkout
         uses: actions/checkout@v2
+      - name: echo $RUNNER_OS
+        run: echo $RUNNER_OS
       - name: Install libpcsclite-dev check gengetopt help2man
         run: |
             if [ "$RUNNER_OS" == "Linux" ]; then
