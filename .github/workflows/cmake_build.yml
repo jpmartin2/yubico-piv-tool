@@ -17,20 +17,21 @@ jobs:
       # This action checks-out the repository under $GITHUB_WORKSPACE, so the workflow can access it.
       - name: checkout
         uses: actions/checkout@v2
-      - name: echo $RUNNER_OS
-        run: echo $RUNNER_OS
       - name: Install prerequisites
         run: |
             if [ "$RUNNER_OS" == "Linux" ]; then
               echo sudo apt install libpcsclite-dev check gengetopt help2man
               sudo apt install libpcsclite-dev check gengetopt help2man
             elif [ "$RUNNER_OS" == "macOS" ]; then
+              echo PKG_CONFIG_PATH = $PKG_CONFIG_PATH
+              echo pkg-config --list-all
+              pkg-config --list-all
               echo sudo find / -name "libcrypto.pc"
               sudo find / -name "libcrypto.pc"
               echo sudo find / -name "*libcrypto*"
               sudo find / -name "*libcrypto*"
-              echo brew install pkg-config openssl pcsc-lite check gengetopt help2man libssl-dev
-              brew install pkg-config openssl pcsc-lite check gengetopt help2man libssl-dev
+              echo brew install pkg-config openssl pcsc-lite check gengetopt help2man
+              brew install pkg-config openssl pcsc-lite check gengetopt help2man
             else
               echo "$RUNNER_OS not supported"
               exit 1
