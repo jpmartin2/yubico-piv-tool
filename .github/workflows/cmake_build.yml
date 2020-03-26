@@ -28,6 +28,7 @@ jobs:
               export PKG_CONFIG_PATH="/usr/local/Cellar/openssl@1.1/1.1.1d/lib/pkgconfig"
               echo PKG_CONFIG_PATH = $PKG_CONFIG_PATH
               echo pkg-config --list-all
+              pkg-config --list-all
             else
               echo "$RUNNER_OS not supported"
               exit 1
@@ -41,6 +42,8 @@ jobs:
       #  run: brew help
       - name: run cmake
         run: |
+          echo export PKG_CONFIG_PATH="/usr/local/Cellar/openssl@1.1/1.1.1d/lib/pkgconfig"
+          export PKG_CONFIG_PATH="/usr/local/Cellar/openssl@1.1/1.1.1d/lib/pkgconfig"
           echo mkdir cmake_build
           mkdir cmake_build
           echo cd cmake_build
