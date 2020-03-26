@@ -25,9 +25,7 @@ jobs:
             elif [ "$RUNNER_OS" == "macOS" ]; then
               echo brew install pkg-config pcsc-lite check gengetopt help2man
               brew install pkg-config pcsc-lite check gengetopt help2man
-              echo ls /usr/local/opt
-              ls /usr/local/opt
-              export PKG_CONFIG_PATH="/usr/local/Cellar/openssl@1.1/1.1.1d/lib/pkgconfig;"
+              export PKG_CONFIG_PATH="/usr/local/opt"
               echo PKG_CONFIG_PATH = $PKG_CONFIG_PATH
               echo pkg-config --list-all
               pkg-config --list-all
