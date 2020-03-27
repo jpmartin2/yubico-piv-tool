@@ -28,6 +28,13 @@ jobs:
 
               echo ls /usr/local/opt
               ls /usr/local/opt
+
+              echo ls /usr/local/Cellar/openssl@1.1/1.1.1d/lib/pkgconfig
+              ls /usr/local/Cellar/openssl@1.1/1.1.1d/lib/pkgconfig
+
+              echo ln -s /usr/local/Cellar/openssl@1.1/1.1.1d/lib/pkgconfig/libcrypto.pc /usr/local/opt/openssl@1.1/lib/pkgconfig/libcrypto.pc
+              ln -s /usr/local/Cellar/openssl@1.1/1.1.1d/lib/pkgconfig/libcrypto.pc /usr/local/opt/openssl@1.1/lib/pkgconfig/libcrypto.pc
+
             else
               echo "$RUNNER_OS not supported"
               exit 1
