@@ -25,6 +25,9 @@ jobs:
             elif [ "$RUNNER_OS" == "macOS" ]; then
               echo brew install pkg-config pcsc-lite check gengetopt help2man
               brew install pkg-config pcsc-lite check gengetopt help2man
+
+              echo ls /usr/local/opt
+              ls /usr/local/opt
             else
               echo "$RUNNER_OS not supported"
               exit 1
