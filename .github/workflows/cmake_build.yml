@@ -55,6 +55,7 @@ jobs:
           cd cmake_build
           echo cmake .. -DVERBOSE_CMAKE=ON -DENABLE_GCC_WARN=ON
           cmake .. -DVERBOSE_CMAKE=ON -DENABLE_GCC_WARN=ON
+          echo PKG_CONFIG_PATH=$PKG_CONFIG_PATH
           echo make
           make
           echo make test
