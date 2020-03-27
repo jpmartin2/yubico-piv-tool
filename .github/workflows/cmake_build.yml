@@ -48,6 +48,7 @@ jobs:
       #  run: brew help
       - name: run cmake
         run: |
+          echo PKG_CONFIG_PATH=$PKG_CONFIG_PATH
           echo mkdir cmake_build
           mkdir cmake_build
           echo cd cmake_build
