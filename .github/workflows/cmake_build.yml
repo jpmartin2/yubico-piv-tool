@@ -25,19 +25,14 @@ jobs:
             elif [ "$RUNNER_OS" == "macOS" ]; then
               echo brew install pkg-config
               brew install pkg-config
-
               echo brew install pkg-config
               brew install pkg-config
-
               echo brew install pcsc-lite
               brew install pcsc-lite
-
               echo brew install check
               brew install check
-
               echo brew install gengetopt
               brew install gengetopt
-
               echo brew install help2man
               brew install help2man
           else
