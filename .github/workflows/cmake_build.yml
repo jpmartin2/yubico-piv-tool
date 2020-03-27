@@ -38,8 +38,8 @@ jobs:
       #  run: brew help
       - name: run cmake
         run: |
-          echo ls /usr/local/Cellar/openssl@1.1/1.1.1d/include
-          ls /usr/local/Cellar/openssl@1.1/1.1.1d/include
+          echo ls /usr/local/Cellar/openssl@1.1/1.1.1d/include/openssl
+          ls /usr/local/Cellar/openssl@1.1/1.1.1d/include/openssl
 
           echo mkdir cmake_build
           mkdir cmake_build
