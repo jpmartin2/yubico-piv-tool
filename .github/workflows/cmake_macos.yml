@@ -18,6 +18,12 @@ jobs:
         run: |
           echo brew install pkg-config pcsc-lite check gengetopt help2man
           brew install pkg-config pcsc-lite check gengetopt help2man
+
+          echo cd /usr/local/include
+          cd /usr/local/include
+
+          echo ln -s /usr/local/Cellar/openssl@1.1/1.1.1d/include/openssl .
+          ln -s /usr/local/Cellar/openssl@1.1/1.1.1d/include/openssl .
       - name: run cmake
         run: |
           echo ls /usr/local/Cellar/openssl@1.1/1.1.1d/include/openssl
