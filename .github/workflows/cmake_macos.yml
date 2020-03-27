@@ -8,11 +8,7 @@ on:
 jobs:
   build:
 
-    runs-on: ${{ matrix.os }}
-    strategy:
-      max-parallel: 2
-      matrix:
-        os: [ubuntu-latest, macos-latest]
+    runs-on: macos-latest
 
     steps:
       # This action checks-out the repository under $GITHUB_WORKSPACE, so the workflow can access it.
@@ -20,28 +16,24 @@ jobs:
         uses: actions/checkout@v2
       - name: Install prerequisites
         run: |
-            if [ "$RUNNER_OS" == "Linux" ]; then
-              echo sudo apt install libpcsclite-dev check gengetopt help2man
-              sudo apt install libpcsclite-dev check gengetopt help2man
-            elif [ "$RUNNER_OS" == "macOS" ]; then
-              echo brew install pkg-config pcsc-lite check gengetopt help2man
-              brew install pkg-config pcsc-lite check gengetopt help2man
-            else
-              echo "$RUNNER_OS not supported"
-              exit 1
-            fi
-        shell: bash
+          echo brew install pkg-config pcsc-lite check gengetopt help2man
+          brew install pkg-config pcsc-lite check gengetopt help2man
       - name: run cmake
         run: |
           echo ls /usr/local/Cellar/openssl@1.1/1.1.1d/include/openssl
           ls /usr/local/Cellar/openssl@1.1/1.1.1d/include/openssl
+
           echo mkdir cmake_build
           mkdir cmake_build
+
           echo cd cmake_build
           cd cmake_build
+
           echo cmake .. -DVERBOSE_CMAKE=ON -DENABLE_GCC_WARN=ON
           cmake .. -DVERBOSE_CMAKE=ON -DENABLE_GCC_WARN=ON
+
           echo make
           make
+
           echo make test
           make test
