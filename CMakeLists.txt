@@ -46,7 +46,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/")
 include(configOptions)
 include(openssl)
 find_libcrypto()
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${LIBCRYPTO_LDFLAGS}")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${LIBCRYPTO_CFLAGS}")
 
 if (NOT CMAKE_BUILD_TYPE)
     if (${RELEASE_BUILD} MATCHES 1)
