@@ -30,12 +30,6 @@ message("lib/CMakeList.txt")
 include(pcscd)
 find_pcscd()
 
-
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${PCSC_CFLAGS}")
-
-# AM_CPPFLAGS = $(OPENSSL_CFLAGS) $(PCSC_CFLAGS)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${PCSC_CFLAGS}")
-
 set(YKPIV_VERSION_STRING "${yubico_piv_tool_VERSION_MAJOR}.${yubico_piv_tool_VERSION_MINOR}.${yubico_piv_tool_VERSION_PATCH}")
 
 set(SOURCE ykpiv.c util.c internal.c version.c error.c)
@@ -45,7 +39,8 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 add_library(ykpiv SHARED ${SOURCE})
 set_target_properties(ykpiv PROPERTIES BUILD_RPATH "${CMAKE_BINARY_DIR}/lib")
-set_target_properties (ykpiv PROPERTIES VERSION "${yubico_piv_tool_VERSION_MAJOR}.${yubico_piv_tool_VERSION_MINOR}.${yubico_piv_tool_VERSION_PATCH}" SOVERSION ${yubico_piv_tool_VERSION_MAJOR})
+#set_target_properties (ykpiv PROPERTIES VERSION "${yubico_piv_tool_VERSION_MAJOR}.${yubico_piv_tool_VERSION_MINOR}.${yubico_piv_tool_VERSION_PATCH}" SOVERSION ${yubico_piv_tool_VERSION_MAJOR})
+set_target_properties (ykpiv PROPERTIES VERSION "${YKPIV_VERSION_STRING}" SOVERSION ${yubico_piv_tool_VERSION_MAJOR})
 
 if(BUILD_STATIC_LIB)
     add_library (ykpiv_static STATIC ${STATIC_SOURCE})
