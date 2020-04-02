@@ -60,8 +60,6 @@ if (BUILD_STATIC_LIB)
 #    add_coverage (yubicp-piv-tool_static)
 endif (BUILD_STATIC_LIB)
 
-
-
 # Set install RPATH
 set_target_properties(yubico-piv-tool PROPERTIES INSTALL_RPATH "${YKPIV_INSTALL_LIB_DIR}")
 

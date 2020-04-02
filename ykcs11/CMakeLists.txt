@@ -38,16 +38,17 @@ set(
         utils.c
         openssl_utils.c
         objects.c
-)
-
-include_directories(
-        ${CMAKE_CURRENT_SOURCE_DIR}/../lib
-        ${CMAKE_CURRENT_SOURCE_DIR}
+        ../tool/util.c
 )
 
 if(${LIBCRYPTO_VERSION} VERSION_LESS 1.1.0)
     set(SOURCE ${SOURCE} ../tool/openssl-compat.c)
 endif()
+
+include_directories(
+        ${CMAKE_CURRENT_SOURCE_DIR}/../lib
+        ${CMAKE_CURRENT_SOURCE_DIR}
+)
 
 set(YKCS11_VERSION_STRING "${yubico_piv_tool_VERSION_MAJOR}.${yubico_piv_tool_VERSION_MINOR}.${yubico_piv_tool_VERSION_PATCH}")
 set(YKCS11_VERSION_NUMBER ${yubico_piv_tool_VERSION_MAJOR}.${yubico_piv_tool_VERSION_MINOR}.${yubico_piv_tool_VERSION_PATCH})
