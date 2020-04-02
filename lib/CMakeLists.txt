@@ -29,6 +29,7 @@ message("lib/CMakeList.txt")
 
 include(pcscd)
 find_pcscd()
+link_directories(${PCSC_LIBRARY_DIRS})
 
 set(YKPIV_VERSION_STRING "${yubico_piv_tool_VERSION_MAJOR}.${yubico_piv_tool_VERSION_MINOR}.${yubico_piv_tool_VERSION_PATCH}")
 
