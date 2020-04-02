@@ -27,6 +27,8 @@
 
 message("tool/CMakeList.txt")
 
+link_directories(${PCSC_LIBRARY_DIRS})
+
 include(gengetopt)
 find_gengetopt()
 add_gengetopt_files (cmdline)
