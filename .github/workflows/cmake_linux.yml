@@ -35,8 +35,8 @@ jobs:
           echo make test
           make test
 
-          echo make install
-          make install
+          echo sudo make install
+          sudo make install
 
           echo yubico-piv-tool --help
           yubico-piv-tool --help
