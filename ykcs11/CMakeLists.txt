@@ -27,6 +27,7 @@
 
 message("ykcs11/CMakeList.txt")
 
+link_directories(${PCSC_LIBRARY_DIRS})
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fvisibility=hidden")
 
 set(
